@@ -1,0 +1,11 @@
+# -*- coding: utf-8 -*-
+
+Main: 
+    Input:
+        positive: 'D:/thunderdownload/mnist__data/hog/Input/pedestrians/'
+        Negative: 'D:/thunderdownload/mnist__data/hog/Input/neg/'
+    Output: 'D:/thunderdownload/mnist__data/hog/Output/'
+
+FileType: 
+- jpg
+- ppm
