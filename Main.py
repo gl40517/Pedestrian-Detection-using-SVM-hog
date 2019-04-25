@@ -64,9 +64,12 @@ def App():
     time_end = time.time()
     print('use %d seconds'%(time_end - time_start))
     print('ready to train SVM')
+    time_start = time.time()
     svmObj=svmClass((DataX,DataY))
     svmObj.trainData()
+    time_end = time.time()
     print('SVM train done')
+    print('use %d seconds' % (time_end - time_start))
 ####predict 
     os.chdir(output)
     images= []
