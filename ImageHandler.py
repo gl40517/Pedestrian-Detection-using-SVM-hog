@@ -1,8 +1,5 @@
 import cv2 as cv
-import numpy as np
-import matplotlib.pyplot as plt
 from HistogramProcessing import HistogramOperations
-import matplotlib.image as mpimg
 import os
 
 class Imagehandler(object):
@@ -11,12 +8,13 @@ class Imagehandler(object):
         if os.path.exists(path) and os.path.isfile(path) :
             self.ImagePath = path
             if img is None:
-                self.Image=cv.imread(self.ImagePath,0)
+                self.Image=cv.imread(self.ImagePath,1)
 
                 #print(self.Image.shape[:2])
 #                cv.imshow("hello",self.Image)
 #                cv.waitKey(0)
             else:
+                #img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
                 self.Image=img
                 #print(self.Image.shape[:2])
             

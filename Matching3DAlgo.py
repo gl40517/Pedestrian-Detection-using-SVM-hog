@@ -1,7 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-@author: Ankit Singh
-"""
 import numpy as np
 import random
 import math
@@ -72,7 +69,7 @@ def CompareTwoMinutiae(p1,q1,thresh_r,thresh_s,thresh_q,thresh_g,thresh_phi):
     delta_q=min(np.abs(q_p1-q_q1),360-np.abs(q_p1-q_q1))
     delta_g=np.abs(g_p1- g_q1)
     delta_phi=np.abs(phi_p1 - phi_q1)
-    print delta_r,delta_s,delta_q,delta_g,delta_phi
+    print(delta_r,delta_s,delta_q,delta_g,delta_phi)
     if delta_r < thresh_r and delta_s <thresh_s and delta_q<thresh_q and \
     delta_g <thresh_g and delta_phi <thresh_phi :
         return True
@@ -108,16 +105,16 @@ def Main(P,Q,P_referenceIndex,Q_referenceIndex,thresh_r,thresh_s,thresh_q,thresh
            output=CompareTwoMinutiae(m_1,m_2,thresh_r,thresh_s,thresh_q,thresh_g,thresh_phi) 
            if output:
                m_count +=1
-    print len(FeatureVector_P),len(FeatureVector_Q)
+    print(len(FeatureVector_P),len(FeatureVector_Q))
     score=CountingMatchingScores(m_count,len(FeatureVector_P),len(FeatureVector_Q))
     
-    print score
+    print(score)
 
 def Simulation():
     # Since I dont understand  how to construct 3D minutiae. That's why I am just radom sample to test 
     # the algorithm. Those methods will be updated once i understand them.
-    P=[[random.randint(1,50),random.randint(1,50),random.randint(1,50),math.degrees(random.randint(1,50)),math.degrees(random.randint(1,50))]for i in xrange(1,500)]
-    Q=[[random.randint(1,50),random.randint(1,50),random.randint(1,50),math.degrees(random.randint(1,50)),math.degrees(random.randint(1,50))]for i in xrange(1,500)]
+    P=[[random.randint(1,50),random.randint(1,50),random.randint(1,50),math.degrees(random.randint(1,50)),math.degrees(random.randint(1,50))]for i in range(1,500)]
+    Q=[[random.randint(1,50),random.randint(1,50),random.randint(1,50),math.degrees(random.randint(1,50)),math.degrees(random.randint(1,50))]for i in range(1,500)]
 #    print P , Q
     Main(P,Q,10,20,22,16,28,32,36)
     
